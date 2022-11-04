@@ -1,6 +1,6 @@
 # Front-end Coding Challenge
 
-> Disclosure: Our current challenge is based on [Leah's takehome challenge](https://github.com/wellium/coding-challenge-frontend)
+> Disclosure: Our current challenge is based on [Leah's takehome challenge](https://github.com/wellium/coding-challenge-frontend) and a fork by [Radial Systems](https://github.com/radaisystems/front-end_takehome)
 
 ## Table of contents
 - [Front-end Coding Challenge](#front-end-coding-challenge)
@@ -16,7 +16,7 @@
     + [Submitting your challenge](#submitting-your-challenge)
 
 ## Introduction
-Rad AI is seeking a Senior Front End Engineer to join our team and make a major impact in a critical time for our company.
+Phoenix Multisport is seeking a Front End Engineer to join our team and make a major impact in a critical time for our company.
 
 Your challenge will be to develop a microsite allowing interaction with a [FHIR](https://fr.wikipedia.org/wiki/Fast_Healthcare_Interoperability_Resources) test API.
 This challenge is composed of 5 levels of difficulty which will be listed below.
@@ -34,8 +34,16 @@ This challenge is composed of 5 levels of difficulty which will be listed below.
 - You must commit your code at the end of each level.
 
 You can have a look at the higher levels, but do the simplest thing that could work for the level you're currently solving.
+
 Each level uses the previous one, you can reuse your old code.
+
 Don't hesitate to write shameless code at first, and then refactor it in the next levels.
+
+We understand that the UI may not have the most polish. Feel free to use [Tailwind](https://tailwindcss.com/) or some other styling framework to cut down on time spent on the UI elements.
+
+Once you have completed the excercise, you will sit down with a senior engineer to review your work. You will be asked questions about why you made certain decisions, your next steps (if you were to continue developing this project) and more.
+
+Thank you for taking the time to interview with us and complete this take-home. We really appreciate it!
 
 ### Bonus
 
