@@ -24,6 +24,19 @@ const practitionerReducer = (state = initState, action) => {
         loading: false,
         error: null
       };
+
+    case CONSTANTS.UPDATE_PRACTITIONER_REQUEST:
+      return { ...state, loading: true, error: null };
+    case CONSTANTS.UPDATE_PRACTITIONER_FAILURE:
+      return { ...state, loading: false, error: action.payload.error };
+    case CONSTANTS.UPDATE_PRACTITIONER_SUCCESS:
+      return {
+        ...state,
+        practitioners: state.practitioners.map(item => item.id === action.payload.id ? action.payload : item),
+        loading: false,
+        error: null
+      };
+
     default:
       return state
   }

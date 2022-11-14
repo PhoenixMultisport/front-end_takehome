@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
-import { Button, Layout, Space, Table, Typography } from 'antd';
+import { Alert, Button, Layout, Space, Table, Typography } from 'antd';
 import { fetchPractitioners } from '../redux/practitioner/actions';
 
 const { Content } = Layout;
@@ -59,6 +59,10 @@ const PractitionerList = () => {
   useEffect(() => {
     fetchPractitioners(dispatch);
   }, []);
+
+  if (error) return (
+    <Alert type="error" message={error.message} />
+  )
 
   return (
     <div className="practitioner-list">

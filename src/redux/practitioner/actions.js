@@ -1,20 +1,20 @@
 import axios from 'axios';
-import * as Types from './constants';
+import * as Constants from './constants';
 
 const parseServerData = (resource) => ({
     id: resource.id,
     firstName: resource?.name?.length ? resource?.name[0]?.given?.join(' ') : null,
     lastName: resource?.name?.length ? resource?.name[0]?.family : null,
     address: resource?.address?.map(address => address.text) || null,
-    phone: resource?.telecom?.filter(dataCom => dataCom.system === 'phone').map(phone => phone.value) || null,
-    fax: resource?.telecom?.filter(dataCom => dataCom.system === 'fax').map(fax => fax.value) || null,
-    email: resource?.telecom?.filter(dataCom => dataCom.system === 'email').map(email => email.value) || null
+    phone: resource?.telecom?.filter(dataCom => dataCom.system === 'phone')[0]?.value || null,
+    fax: resource?.telecom?.filter(dataCom => dataCom.system === 'fax')[0]?.value || null,
+    email: resource?.telecom?.filter(dataCom => dataCom.system === 'email')[0]?.value || null
   });
 
 export const fetchPractitioners = (dispatch, url) => {
   const requestUrl = url || 'https://hapi.fhir.org/baseDstu3/Practitioner';
 
-  dispatch({ type: Types.FETCH_PRACTITIONERS_REQUEST });
+  dispatch({ type: Constants.FETCH_PRACTITIONERS_REQUEST });
   axios.get(requestUrl).then((res) => {
     let practitioners = [];
     let nextPageUrl = null;
@@ -30,8 +30,72 @@ export const fetchPractitioners = (dispatch, url) => {
       prevPageUrl = previousPage ? previousPage.url : null;
     }
 
-    dispatch({ type: Types.FETCH_PRACTITIONERS_SUCCESS, payload: { practitioners: practitioners, prevPageUrl, nextPageUrl }});
+    dispatch({ type: Constants.FETCH_PRACTITIONERS_SUCCESS, payload: { practitioners: practitioners, prevPageUrl, nextPageUrl }});
   }).catch(error => {
-    dispatch({ type: Types.FETCH_PRACTITIONERS_FAILURE, payload: { error }});
+    dispatch({ type: Constants.FETCH_PRACTITIONERS_FAILURE, payload: { error }});
   });
 };
+
+export const updatePractitioner = (dispatch, practitioner) => {
+  dispatch({ type: Constants.UPDATE_PRACTITIONER_REQUEST });
+
+  const headers = {
+    'Content-Type': 'application/fhir+json'
+  };
+
+  const payload = {
+    "resourceType": "Practitioner",
+    "id": practitioner.id,
+    "identifier": [
+      {
+        "system": "http://fhir.de/NamingSystem/kbv/lanr",
+        "value": practitioner.id
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "family": practitioner.lastName,
+        "given": practitioner.firstName,
+        "prefix": ["Dr."]
+      },
+      {
+        "_family": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+              "valueString": "Test 3"
+            }
+          ]
+        }
+      }
+    ],
+    "telecom": [
+      {
+        "system": "phone",
+        "value": practitioner.phone
+      },
+      {
+        "system": "fax",
+        "value": practitioner.fax
+      },
+      {
+        "system": "email",
+        "value": practitioner.email
+      }
+    ],
+    "address": [
+      {
+        "text": practitioner.address
+      }
+    ]
+  };
+
+  axios.put(`https://hapi.fhir.org/baseDstu3/Practitioner/${practitioner.id}`, payload, { headers: headers })
+    .then((res) => {
+      dispatch({type: Constants.UPDATE_PRACTITIONER_SUCCESS, payload: practitioner});
+    })
+    .catch(error => {
+      dispatch({type: Constants.UPDATE_PRACTITIONER_FAILURE, payload: { error }});
+    });
+}
