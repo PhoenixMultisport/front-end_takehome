@@ -1,16 +1,15 @@
 import axios from 'axios';
 import * as Types from './constants';
 
-const parseServerData = (practitioners) =>
-  practitioners.map(({ resource }) => ({
+const parseServerData = (resource) => ({
     id: resource.id,
-    firstName: resource?.name?.length ? resource?.name[0]?.given?.join(' ') : 'No first name',
-    lastName: resource?.name?.length ? resource?.name[0]?.family : 'No last name',
-    address: resource?.address?.map(address => address.text) || 'No address',
-    phone: resource?.telecom?.filter(dataCom => dataCom.system === 'phone').map(phone => phone.value) || 'No phone',
-    fax: resource?.telecom?.filter(dataCom => dataCom.system === 'fax').map(fax => fax.value) || 'No fax',
-    email: resource?.telecom?.filter(dataCom => dataCom.system === 'email').map(email => email.value) || 'No email'
-  }));
+    firstName: resource?.name?.length ? resource?.name[0]?.given?.join(' ') : null,
+    lastName: resource?.name?.length ? resource?.name[0]?.family : null,
+    address: resource?.address?.map(address => address.text) || null,
+    phone: resource?.telecom?.filter(dataCom => dataCom.system === 'phone').map(phone => phone.value) || null,
+    fax: resource?.telecom?.filter(dataCom => dataCom.system === 'fax').map(fax => fax.value) || null,
+    email: resource?.telecom?.filter(dataCom => dataCom.system === 'email').map(email => email.value) || null
+  });
 
 export const fetchPractitioners = (dispatch, url) => {
   const requestUrl = url || 'https://hapi.fhir.org/baseDstu3/Practitioner';
@@ -22,7 +21,7 @@ export const fetchPractitioners = (dispatch, url) => {
     let prevPageUrl = null;
 
     if (res.data && res.data.entry && res.data.entry.length > 0) {
-      practitioners = parseServerData(res.data.entry);
+      practitioners = res.data.entry.map(({ resource }) => parseServerData(resource));
 
       const nextPage = res.data.link.find(link => link.relation === 'next');
       nextPageUrl = nextPage ? nextPage.url : null;

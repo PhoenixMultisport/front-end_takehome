@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import { Layout, Spin } from 'antd';
 import PractitionerList from './pages/PractitionerList';
+import PractitionerEdit from './pages/PractitionerEdit';
 
 const { Content } = Layout
 
@@ -17,6 +18,7 @@ const AppRouter = () => {
           <Router>
             <Routes>
               <Route path="/" exact element={<PractitionerList />} />
+              <Route path="/practitioners/:id" exact element={<PractitionerEdit />} />
             </Routes>
           </Router>
         </Content>
