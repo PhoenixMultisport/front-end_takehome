@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
-import { Alert, Button, Layout, Space, Table, Typography } from 'antd';
+import { Alert, Button, Space, Table, Typography } from 'antd';
 import { fetchPractitioners } from '../redux/practitioner/actions';
 
-const { Content } = Layout;
 const { Title } = Typography;
 
 const PractitionerList = () => {
@@ -58,19 +57,27 @@ const PractitionerList = () => {
 
   useEffect(() => {
     fetchPractitioners(dispatch);
-  }, []);
+  }, [dispatch]);
+
+  const handlePrevPage = () => {
+    fetchPractitioners(dispatch, prevPageUrl);
+  };
+
+  const handleNextPage = () => {
+    fetchPractitioners(dispatch, nextPageUrl);
+  };
 
   if (error) return (
     <Alert type="error" message={error.message} />
-  )
+  );
 
   return (
     <div className="practitioner-list">
       <Title>Practitioner List</Title>
       <Table columns={columns} dataSource={practitioners} pagination={false} loading={loading} />
       <Space style={{ marginTop: '10px' }}>
-        <Button type="primary">Prev</Button>
-        <Button type="primary">Next</Button>
+        <Button type="primary" onClick={handlePrevPage} disabled={!prevPageUrl}>Prev</Button>
+        <Button type="primary" onClick={handleNextPage} disabled={!nextPageUrl}>Next</Button>
       </Space>
     </div>
   );

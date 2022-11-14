@@ -19,8 +19,8 @@ const practitionerReducer = (state = initState, action) => {
       return {
         ...state,
         practitioners: action.payload.practitioners,
-        nextPage: action.payload.nextPageUrl,
-        prevPage: action.payload.prevPageUrl,
+        nextPageUrl: action.payload.nextPageUrl,
+        prevPageUrl: action.payload.prevPageUrl,
         loading: false,
         error: null
       };
