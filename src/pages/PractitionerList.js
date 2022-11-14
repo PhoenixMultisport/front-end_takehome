@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
-import { Alert, Button, Space, Table, Typography } from 'antd';
+import { Alert, Button, Input, Space, Table, Typography } from 'antd';
+import { LeftOutlined, RightOutlined, EditOutlined, ProfileOutlined } from '@ant-design/icons';
 import { fetchPractitioners } from '../redux/practitioner/actions';
 
 const { Title } = Typography;
+const { Search } = Input;
 
 const PractitionerList = () => {
   const dispatch = useDispatch();
@@ -48,7 +50,19 @@ const PractitionerList = () => {
       render: (item) => {
         return (
           <Space key={item.id}>
-            <Button type="primary" onClick={() => navigate(`/practitioners/${item.id}`)}>Edit</Button>
+            <Button
+              onClick={() => navigate(`/practitioners/${item.id}`)}
+              icon={<ProfileOutlined />}
+            >
+              Show
+            </Button>
+            <Button
+              type="primary"
+              icon={<EditOutlined />}
+              onClick={() => navigate(`/practitioners/${item.id}/edit`)}
+            >
+              Edit
+            </Button>
           </Space>
         );
       }
@@ -67,6 +81,13 @@ const PractitionerList = () => {
     fetchPractitioners(dispatch, nextPageUrl);
   };
 
+  const handleSearch = (keyword) => {
+    if (!keyword) fetchPractitioners(dispatch);
+
+    const searchUrl = `https://hapi.fhir.org/baseDstu3/Practitioner?given=${keyword}&_format=json&_pretty=true`;
+    fetchPractitioners(dispatch, searchUrl);
+  };
+
   if (error) return (
     <Alert type="error" message={error.message} />
   );
@@ -74,11 +95,37 @@ const PractitionerList = () => {
   return (
     <div className="practitioner-list">
       <Title>Practitioner List</Title>
-      <Table columns={columns} dataSource={practitioners} pagination={false} loading={loading} />
-      <Space style={{ marginTop: '10px' }}>
-        <Button type="primary" onClick={handlePrevPage} disabled={!prevPageUrl}>Prev</Button>
-        <Button type="primary" onClick={handleNextPage} disabled={!nextPageUrl}>Next</Button>
-      </Space>
+      <div className="table-wrapper">
+        <Space direction="vertical" style={{width: '100%'}}>
+          <Search
+            placeholder="Given name search..."
+            enterButton="Search"
+            size="large"
+            allowClear={true}
+            onSearch={(value) => handleSearch(value)}
+          />
+
+          <Table columns={columns} dataSource={practitioners} pagination={false} loading={loading} rowKey='id' />
+          <Space style={{ marginTop: '10px' }}>
+            <Button
+              type="primary"
+              disabled={!prevPageUrl}
+              onClick={handlePrevPage}
+            >
+              <LeftOutlined />
+              Prev
+            </Button>
+            <Button
+              type="primary"
+              disabled={!nextPageUrl}
+              onClick={handleNextPage}
+            >
+              Next
+              <RightOutlined />
+            </Button>
+          </Space>
+        </Space>
+      </div>
     </div>
   );
 };
