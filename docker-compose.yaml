@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  takehome:
+    build: .
+    container_name: takehome
+    ports:
+      - '3000:3000'
+    stdin_open: true
+    tty: true
