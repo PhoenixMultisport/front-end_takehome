@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# React based Frontend Takehome
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+-   [Node Requirements](#node-prerequisites)
+-   [Local Application Development](#local-application-development)
+-   [Build the Application Locally](#build-the-application-locally)
+-   [Running Locally](#running-locally)
+-   [Unit Testing](#unit-testing)
 
-In the project directory, you can run:
+# Node Prerequisites
 
-### `npm start`
+Your local system will need to have the following installed:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. [Node](https://nodejs.org/en/): The recommended version is [v16.13.1].
+   <br>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    > This is the version that is used to build the deployed application and supports the testing suite. Lower versions may work, but anything below v16 will [likely cause problems](https://www.redhat.com/en/blog/nodejs-16-here-updated-platform-support-v8-version-9-and-more) due to features used in our tests.
 
-### `npm test`
+2. [Node Package Manager (npm)](https://www.npmjs.com/), v6.14.13.
+   <br>
+    > Lower versions _may_ work, but [caveat emptor](https://en.wikipedia.org/wiki/Caveat_emptor).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## NVM
 
-### `npm run build`
+While not required, utilizing a Node Version Manager or NVM on your machine can prove incredibly useful, especially if you find yourself jumping from project to project with differing requirements. It allows you to swap versions of Node on the fly.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-   **Mac:** [Node Version Manager](https://github.com/nvm-sh/nvm)
+-   **Windows:** [NVM for Windows](https://github.com/coreybutler/nvm-windows#installation--upgrades)
+-   **Ubuntu:** [NVM for Ubuntu](https://github.com/nvm-sh/nvm#installing-nvm-on-alpine-linux)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Local Application Development
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The proven way to run the application locally is via dueling Node instances.
+Here is the cliff notes on getting going quickly for operating locally...
 
-### `npm run eject`
+## Build the Application Locally
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1.  Clone the repo in order to pull down the source code
+    `git clone https://github.com/oneway-fullstack/front-end_takehome`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2.  Navigate to project folder
+    `cd front-end_takehome`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3.  Install npm dependencies
+    `npm install`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4.  Build the application by running `npm run build`
 
-## Learn More
+## Running Locally
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. In a separate terminal, run the front end application
+   `npm run start`
+2. This should, eventually, open a browser window pointing to [http://localhost:3000)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Subsequent code changes should trigger a reload on the page, so manual and/or hard refreshing should only be minimally required.
 
-### Code Splitting
+# Unit Testing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To run all the tests asynchronously, from the terminal, run `npm run test`
