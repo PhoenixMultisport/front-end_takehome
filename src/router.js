@@ -9,13 +9,13 @@ import PractitionerList from './pages/PractitionerList';
 import PractitionerShow from './pages/PractitionerShow';
 import PractitionerEdit from './pages/PractitionerEdit';
 
-const { Content } = Layout
+const { Content } = Layout;
 
 const AppRouter = () => {
   return (
     <Suspense fallback={<Spin />}>
       <Layout>
-        <Content style={{ margin: '24px 16px' }}>
+        <Content role="app-content" style={{ margin: '24px 16px' }}>
           <Router>
             <Routes>
               <Route path="/" exact element={<PractitionerList />} />

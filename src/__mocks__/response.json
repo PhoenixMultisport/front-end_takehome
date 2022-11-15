@@ -1,0 +1,448 @@
+{
+  "resourceType": "Bundle",
+  "id": "c2f349e2-a204-4f81-9764-7d9ddc39033a",
+  "meta": {
+    "lastUpdated": "2022-11-14T19:35:27.895+00:00"
+  },
+  "type": "searchset",
+  "link": [ {
+    "relation": "self",
+    "url": "https://hapi.fhir.org/baseDstu3/Practitioner"
+  }, {
+    "relation": "next",
+    "url": "https://hapi.fhir.org/baseDstu3?_getpages=c2f349e2-a204-4f81-9764-7d9ddc39033a&_getpagesoffset=20&_count=20&_pretty=true&_bundletype=searchset"
+  } ],
+  "entry": [ {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/clinFhir7HdCMrkjkMhTCtNCalDmqIQv5RY2",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "clinFhir7HdCMrkjkMhTCtNCalDmqIQv5RY2",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2018-09-30T15:56:36.802+00:00"
+      },
+      "identifier": [ {
+        "system": "http://clinfhir.com/fhir/NamingSystem/practitioner",
+        "value": "7HdCMrkjkMhTCtNCalDmqIQv5RY2"
+      } ],
+      "telecom": [ {
+        "system": "email",
+        "value": "cspice@uw.edu"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/clinFhirFK8NCAv5YfbNZiAzHkIytEWGONv2",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "clinFhirFK8NCAv5YfbNZiAzHkIytEWGONv2",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2018-09-30T15:57:21.206+00:00"
+      },
+      "identifier": [ {
+        "system": "http://clinfhir.com/fhir/NamingSystem/practitioner",
+        "value": "FK8NCAv5YfbNZiAzHkIytEWGONv2"
+      } ],
+      "telecom": [ {
+        "system": "email",
+        "value": "george.dixon@allscripts.com"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/clinFhirC6955l18fegSZTbdPeU8NJupQS63",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "clinFhirC6955l18fegSZTbdPeU8NJupQS63",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2018-09-30T15:58:39.011+00:00"
+      },
+      "identifier": [ {
+        "system": "http://clinfhir.com/fhir/NamingSystem/practitioner",
+        "value": "C6955l18fegSZTbdPeU8NJupQS63"
+      } ],
+      "telecom": [ {
+        "system": "email",
+        "value": "david.hay25@gmail.com"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/clinFhirASRI9w7vHgOroL588wLmL0JrExm2",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "clinFhirASRI9w7vHgOroL588wLmL0JrExm2",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2018-09-30T16:00:14.930+00:00"
+      },
+      "identifier": [ {
+        "system": "http://clinfhir.com/fhir/NamingSystem/practitioner",
+        "value": "ASRI9w7vHgOroL588wLmL0JrExm2"
+      } ],
+      "telecom": [ {
+        "system": "email",
+        "value": "birjuspatel@gmail.com"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/clinFhirHhcFkJYwOpV3RnTBuS0DxKKG2sL2",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "clinFhirHhcFkJYwOpV3RnTBuS0DxKKG2sL2",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2018-09-30T16:01:56.031+00:00"
+      },
+      "identifier": [ {
+        "system": "http://clinfhir.com/fhir/NamingSystem/practitioner",
+        "value": "HhcFkJYwOpV3RnTBuS0DxKKG2sL2"
+      } ],
+      "telecom": [ {
+        "system": "email",
+        "value": "healthcareinterop@gmail.com"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/clinFhirv867a8rbVjg0G3EiMVgueQ9e1qo2",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "clinFhirv867a8rbVjg0G3EiMVgueQ9e1qo2",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2018-09-30T16:16:46.963+00:00"
+      },
+      "identifier": [ {
+        "system": "http://clinfhir.com/fhir/NamingSystem/practitioner",
+        "value": "v867a8rbVjg0G3EiMVgueQ9e1qo2"
+      } ],
+      "telecom": [ {
+        "system": "email",
+        "value": "wburke@medicine.washington.edu"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/clinFhir0pbz5SRvEKd2mWxd7eN2MAQd9M93",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "clinFhir0pbz5SRvEKd2mWxd7eN2MAQd9M93",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2018-09-30T16:18:02.494+00:00"
+      },
+      "identifier": [ {
+        "system": "http://clinfhir.com/fhir/NamingSystem/practitioner",
+        "value": "0pbz5SRvEKd2mWxd7eN2MAQd9M93"
+      } ],
+      "telecom": [ {
+        "system": "email",
+        "value": "jay@cheakamus.com"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/clinFhirwCnsoNmbSjdnvGfKy9HaBRGIvgz1",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "clinFhirwCnsoNmbSjdnvGfKy9HaBRGIvgz1",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2018-09-30T16:31:21.347+00:00"
+      },
+      "identifier": [ {
+        "system": "http://clinfhir.com/fhir/NamingSystem/practitioner",
+        "value": "wCnsoNmbSjdnvGfKy9HaBRGIvgz1"
+      } ],
+      "telecom": [ {
+        "system": "email",
+        "value": "emma.jones@allscripts.com"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/clinFhirukVySha74EhDY9xUK4CR9V3EClb2",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "clinFhirukVySha74EhDY9xUK4CR9V3EClb2",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2018-09-30T16:56:50.279+00:00"
+      },
+      "identifier": [ {
+        "system": "http://clinfhir.com/fhir/NamingSystem/practitioner",
+        "value": "ukVySha74EhDY9xUK4CR9V3EClb2"
+      } ],
+      "telecom": [ {
+        "system": "email",
+        "value": "chrisa_61@yahoo.com"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/clinFhirbd1ANtSUsWR0OULiH5Pbt2F3x3g2",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "clinFhirbd1ANtSUsWR0OULiH5Pbt2F3x3g2",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2018-09-30T18:09:20.300+00:00"
+      },
+      "identifier": [ {
+        "system": "http://clinfhir.com/fhir/NamingSystem/practitioner",
+        "value": "bd1ANtSUsWR0OULiH5Pbt2F3x3g2"
+      } ],
+      "telecom": [ {
+        "system": "email",
+        "value": "drinterop@gmail.com"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/clinFhirxxqi4RctwzgOU0J34gR7RtRZ6p53",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "clinFhirxxqi4RctwzgOU0J34gR7RtRZ6p53",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2018-09-30T18:23:43.607+00:00"
+      },
+      "identifier": [ {
+        "system": "http://clinfhir.com/fhir/NamingSystem/practitioner",
+        "value": "xxqi4RctwzgOU0J34gR7RtRZ6p53"
+      } ],
+      "telecom": [ {
+        "system": "email",
+        "value": "mvondran@gmail.com"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/clinFhirNM7uqTm65gZHKEzsqLQ9nT2y2662",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "clinFhirNM7uqTm65gZHKEzsqLQ9nT2y2662",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2018-09-30T19:01:43.801+00:00"
+      },
+      "identifier": [ {
+        "system": "http://clinfhir.com/fhir/NamingSystem/practitioner",
+        "value": "NM7uqTm65gZHKEzsqLQ9nT2y2662"
+      } ],
+      "telecom": [ {
+        "system": "email",
+        "value": "pa.f.werner@gmail.com"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/clinFhirbqsp1zJ4G6NmckaQKAWDeLpKRF73",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "clinFhirbqsp1zJ4G6NmckaQKAWDeLpKRF73",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2018-09-30T19:07:08.012+00:00"
+      },
+      "identifier": [ {
+        "system": "http://clinfhir.com/fhir/NamingSystem/practitioner",
+        "value": "bqsp1zJ4G6NmckaQKAWDeLpKRF73"
+      } ],
+      "telecom": [ {
+        "system": "email",
+        "value": "bmilius@nmdp.org"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/clinFhirF6kbqEZYZAc1wDYHPFML6jtApog1",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "clinFhirF6kbqEZYZAc1wDYHPFML6jtApog1",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2018-09-30T19:09:33.518+00:00"
+      },
+      "identifier": [ {
+        "system": "http://clinfhir.com/fhir/NamingSystem/practitioner",
+        "value": "F6kbqEZYZAc1wDYHPFML6jtApog1"
+      } ],
+      "telecom": [ {
+        "system": "email",
+        "value": "linda.michaelsen@optum.com"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/clinFhirWGmetv95wmhIT6KBUPeyuMtJ67D2",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "clinFhirWGmetv95wmhIT6KBUPeyuMtJ67D2",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2018-09-30T23:58:21.376+00:00"
+      },
+      "identifier": [ {
+        "system": "http://clinfhir.com/fhir/NamingSystem/practitioner",
+        "value": "WGmetv95wmhIT6KBUPeyuMtJ67D2"
+      } ],
+      "telecom": [ {
+        "system": "email",
+        "value": "miscaminatas@gmail.com"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/20194",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "20194",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2018-10-01T02:43:40.272+00:00"
+      },
+      "identifier": [ {
+        "system": "http://clinfhir.com/fhir/NamingSystem/practitioner",
+        "value": "WGmetv95wmhIT6KBUPeyuMtJ67D2"
+      } ],
+      "telecom": [ {
+        "system": "email",
+        "value": "miscaminatas@gmail.com"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/20204",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "20204",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2018-10-01T02:44:07.340+00:00"
+      },
+      "identifier": [ {
+        "system": "http://clinfhir.com/fhir/NamingSystem/practitioner",
+        "value": "WGmetv95wmhIT6KBUPeyuMtJ67D2"
+      } ],
+      "telecom": [ {
+        "system": "email",
+        "value": "miscaminatas@gmail.com"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/clinFhiroLzJxoS73EgVWo9iXwY1E1YncEH2",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "clinFhiroLzJxoS73EgVWo9iXwY1E1YncEH2",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2018-10-01T03:21:22.311+00:00"
+      },
+      "identifier": [ {
+        "system": "http://clinfhir.com/fhir/NamingSystem/practitioner",
+        "value": "oLzJxoS73EgVWo9iXwY1E1YncEH2"
+      } ],
+      "telecom": [ {
+        "system": "email",
+        "value": "kevin.olbrich@mckesson.com"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/clinFhirERg7vgQhMDTTkDi6DGc04lkO53s2",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "clinFhirERg7vgQhMDTTkDi6DGc04lkO53s2",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2018-10-01T03:32:45.981+00:00"
+      },
+      "identifier": [ {
+        "system": "http://clinfhir.com/fhir/NamingSystem/practitioner",
+        "value": "ERg7vgQhMDTTkDi6DGc04lkO53s2"
+      } ],
+      "telecom": [ {
+        "system": "email",
+        "value": "mounika.k@collabnotes.com"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/21382",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "21382",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2018-10-01T04:44:29.370+00:00"
+      },
+      "identifier": [ {
+        "use": "official",
+        "value": "195845",
+        "assigner": {
+          "reference": "195845",
+          "display": "PV1"
+        }
+      } ],
+      "name": [ {
+        "family": "S",
+        "given": [ "Sasikala" ],
+        "prefix": [ "DR" ]
+      } ],
+      "gender": "unknown",
+      "communication": [ {
+        "coding": [ {
+          "code": "ENG",
+          "display": "English"
+        } ]
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  } ]
+}

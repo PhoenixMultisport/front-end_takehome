@@ -92,7 +92,7 @@ const PractitionerEdit = () => {
 
             <Form.Item
               name="fax"
-              label="fax"
+              label="Fax"
               rules={[
                 {
                   required: true,

@@ -98,4 +98,4 @@ export const updatePractitioner = (dispatch, practitioner) => {
     .catch(error => {
       dispatch({type: Constants.UPDATE_PRACTITIONER_FAILURE, payload: { error }});
     });
-}
+};

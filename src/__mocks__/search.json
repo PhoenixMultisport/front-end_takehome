@@ -1,0 +1,490 @@
+{
+  "resourceType": "Bundle",
+  "id": "e20b893f-9f54-4b96-b6d2-cdb6b049045a",
+  "meta": {
+    "lastUpdated": "2022-11-15T13:37:31.578+00:00"
+  },
+  "type": "searchset",
+  "total": 11,
+  "link": [ {
+    "relation": "self",
+    "url": "https://hapi.fhir.org/baseDstu3/Practitioner?_format=json&_pretty=true&given=Test"
+  } ],
+  "entry": [ {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/clinFhirUIKd23aJnhSkpILUdPqb4NPMlCG2",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "clinFhirUIKd23aJnhSkpILUdPqb4NPMlCG2",
+      "meta": {
+        "extension": [ {
+          "url": "http://hapifhir.io/fhir/StructureDefinition/resource-meta-source",
+          "valueUri": "#pJqsyhyhqcnxOpZh"
+        } ],
+        "versionId": "2",
+        "lastUpdated": "2022-11-14T15:15:04.686+00:00"
+      },
+      "identifier": [ {
+        "system": "http://fhir.de/NamingSystem/kbv/lanr",
+        "value": "clinFhirUIKd23aJnhSkpILUdPqb4NPMlCG2"
+      } ],
+      "name": [ {
+        "use": "usual",
+        "family": "Test",
+        "given": [ "Test" ],
+        "prefix": [ "Dr." ]
+      }, {
+        "_family": {
+          "extension": [ {
+            "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+            "valueString": "Test 3"
+          } ]
+        }
+      } ],
+      "telecom": [ {
+        "system": "phone",
+        "value": "12345678"
+      }, {
+        "system": "fax",
+        "value": "Test"
+      }, {
+        "system": "email",
+        "value": "test@yahoo.com"
+      } ],
+      "address": [ {
+        "text": "Test"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/1741434",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "1741434",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2019-04-17T06:29:40.705+00:00"
+      },
+      "name": [ {
+        "family": "test",
+        "given": [ "test" ]
+      } ],
+      "telecom": [ {
+        "system": "phone",
+        "value": "1273128391",
+        "use": "home"
+      } ],
+      "address": [ {
+        "use": "home",
+        "type": "both",
+        "country": "USA"
+      } ],
+      "gender": "male"
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/cf-1573929119773",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "cf-1573929119773",
+      "meta": {
+        "extension": [ {
+          "url": "http://hapifhir.io/fhir/StructureDefinition/resource-meta-source",
+          "valueUri": "#gimp2sjrwr4GAj50"
+        } ],
+        "versionId": "1",
+        "lastUpdated": "2019-11-16T19:11:41.267+00:00"
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">AmiaTest_ProbList_CV<a name=\"mm\"/></div>"
+      },
+      "identifier": [ {
+        "value": "dsfadsg"
+      } ],
+      "active": true,
+      "name": [ {
+        "use": "official",
+        "text": "Dr. Test T. Test MD",
+        "family": "Test",
+        "given": [ "Test", "Test" ],
+        "prefix": [ "Dr" ],
+        "suffix": [ "MD" ]
+      } ],
+      "telecom": [ {
+        "system": "phone",
+        "value": "4",
+        "use": "work"
+      } ],
+      "address": [ {
+        "use": "home",
+        "text": "abc123"
+      } ],
+      "gender": "female"
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/2710186",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "2710186",
+      "meta": {
+        "extension": [ {
+          "url": "http://hapifhir.io/fhir/StructureDefinition/resource-meta-source",
+          "valueUri": "#GpR3jmYn7OIpiPXn"
+        } ],
+        "versionId": "2",
+        "lastUpdated": "2020-04-16T15:00:46.777+00:00"
+      },
+      "name": [ {
+        "prefix": [ "Dr. Med" ]
+      }, {
+        "family": "Meyer",
+        "given": [ "Test" ]
+      } ],
+      "telecom": [ {
+        "system": "phone",
+        "value": "7894564"
+      }, {
+        "system": "fax",
+        "value": "651231"
+      }, {
+        "system": "email",
+        "value": "m.meyer@emuster.com"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/2714465",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "2714465",
+      "meta": {
+        "extension": [ {
+          "url": "http://hapifhir.io/fhir/StructureDefinition/resource-meta-source",
+          "valueUri": "#C1TdwIzNcuRKM1Hv"
+        } ],
+        "versionId": "4",
+        "lastUpdated": "2020-04-16T14:59:37.091+00:00"
+      },
+      "name": [ {
+        "prefix": [ "Dr. Med" ]
+      }, {
+        "family": "Meyer",
+        "given": [ "Test" ]
+      } ],
+      "telecom": [ {
+        "system": "phone",
+        "value": "7894564"
+      }, {
+        "system": "fax",
+        "value": "651231"
+      }, {
+        "system": "email",
+        "value": "m.meyer@emuster.com"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/2735015",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "2735015",
+      "meta": {
+        "extension": [ {
+          "url": "http://hapifhir.io/fhir/StructureDefinition/resource-meta-source",
+          "valueUri": "#iQNHwD3EpdD18nTE"
+        } ],
+        "versionId": "1",
+        "lastUpdated": "2020-08-10T09:42:06.080+00:00"
+      },
+      "identifier": [ {
+        "system": "SAS_identifier_namespace",
+        "value": "11111111h"
+      } ],
+      "name": [ {
+        "family": "test test",
+        "given": [ "test" ]
+      } ],
+      "telecom": [ {
+        "value": "test@g.com"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/2743699",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "2743699",
+      "meta": {
+        "extension": [ {
+          "url": "http://hapifhir.io/fhir/StructureDefinition/resource-meta-source",
+          "valueUri": "#SK8Y9B2RkWCnkskb"
+        } ],
+        "versionId": "2",
+        "lastUpdated": "2022-11-14T16:06:33.524+00:00"
+      },
+      "identifier": [ {
+        "system": "http://fhir.de/NamingSystem/kbv/lanr",
+        "value": "2743699"
+      } ],
+      "name": [ {
+        "use": "usual",
+        "family": "test",
+        "given": [ "Test" ],
+        "prefix": [ "Dr." ]
+      }, {
+        "_family": {
+          "extension": [ {
+            "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+            "valueString": "Test 3"
+          } ]
+        }
+      } ],
+      "telecom": [ {
+        "system": "phone",
+        "value": "12345667"
+      }, {
+        "system": "fax",
+        "value": "test"
+      }, {
+        "system": "email",
+        "value": "test@test.com"
+      } ],
+      "address": [ {
+        "text": "Test"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/2807666",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "2807666",
+      "meta": {
+        "extension": [ {
+          "url": "http://hapifhir.io/fhir/StructureDefinition/resource-meta-source",
+          "valueUri": "#jqifczjdI0lbAXWJ"
+        } ],
+        "versionId": "1",
+        "lastUpdated": "2021-03-18T17:53:36.117+00:00"
+      },
+      "name": [ {
+        "family": "test",
+        "given": [ "test" ]
+      } ],
+      "telecom": [ {
+        "system": "phone",
+        "value": "1273128391",
+        "use": "home"
+      } ],
+      "address": [ {
+        "use": "home",
+        "type": "both",
+        "country": "USA"
+      } ],
+      "gender": "male"
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/a123999999",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "a123999999",
+      "meta": {
+        "extension": [ {
+          "url": "http://hapifhir.io/fhir/StructureDefinition/resource-meta-source",
+          "valueUri": "#T2trQxxL4rdzwCto"
+        } ],
+        "versionId": "1",
+        "lastUpdated": "2021-03-18T17:58:11.787+00:00"
+      },
+      "name": [ {
+        "family": "test",
+        "given": [ "test" ]
+      } ],
+      "telecom": [ {
+        "system": "phone",
+        "value": "1273128391",
+        "use": "home"
+      } ],
+      "address": [ {
+        "use": "home",
+        "type": "both",
+        "country": "USA"
+      } ],
+      "gender": "male"
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/1981806",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "1981806",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2019-07-12T09:47:38.848+00:00",
+        "profile": [ "http://www.kbv.de/fhir/Profil/74_PR_VM_Behandler" ]
+      },
+      "identifier": [ {
+        "system": "http://fhir.de/NamingSystem/kbv/lanr",
+        "value": "1234"
+      } ],
+      "active": true,
+      "name": [ {
+        "family": "test",
+        "given": [ "test2" ],
+        "prefix": [ "Dr." ]
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "https://hapi.fhir.org/baseDstu3/Practitioner/test123",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "test123",
+      "meta": {
+        "extension": [ {
+          "url": "http://hapifhir.io/fhir/StructureDefinition/resource-meta-source",
+          "valueUri": "#01655f94ee0e4d67"
+        } ],
+        "versionId": "1",
+        "lastUpdated": "2019-09-05T08:34:11.139+00:00"
+      },
+      "text": {
+        "status": "generated"
+      },
+      "extension": [ {
+        "url": "http://hl7.org/fhir/registry",
+        "extension": [ {
+          "url": "http://terminology.hl7.org/CodeSystem/v3-Race",
+          "valueCodeableConcept": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-Race",
+              "code": "1002-5"
+            } ]
+          }
+        } ]
+      } ],
+      "identifier": [ {
+        "use": "usual",
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MR"
+          } ]
+        },
+        "value": "emrtest123",
+        "assigner": {
+          "display": "Health Care for Christ"
+        }
+      }, {
+        "use": "official",
+        "type": {
+          "coding": [ {
+            "system": "https://www.ris.gov.tw/app/en/3051",
+            "code": "PPN"
+          } ],
+          "text": "random"
+        },
+        "system": "https://www.ris.gov.tw/app/en/3051",
+        "value": "test123",
+        "assigner": {
+          "display": "Department Of Household Registration"
+        }
+      }, {
+        "use": "official",
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "NIIP"
+          } ]
+        },
+        "system": "https://www.mohw.gov.tw/mp-2.html",
+        "value": "test123",
+        "assigner": {
+          "display": "Ministry Of Health Taiwan"
+        }
+      } ],
+      "active": true,
+      "name": [ {
+        "use": "official",
+        "given": [ "testing" ],
+        "prefix": [ "mr" ]
+      }, {
+        "use": "official",
+        "given": [ "t" ]
+      }, {
+        "use": "official",
+        "given": [ "t" ]
+      } ],
+      "telecom": [ {
+        "system": "phone",
+        "value": "9",
+        "use": "mobile"
+      }, {
+        "system": "email",
+        "value": "9",
+        "use": "home"
+      }, {
+        "system": "email",
+        "value": "9",
+        "use": "home"
+      } ],
+      "address": [ {
+        "use": "home",
+        "text": "oioi, io, oio, ioioio",
+        "line": [ "oioi" ],
+        "city": "io",
+        "postalCode": "oio"
+      }, {
+        "use": "work",
+        "text": "oioio, yhg, iiuhiuu, fhghhvhgvh",
+        "line": [ "oioio" ],
+        "city": "yhg",
+        "postalCode": "iiuhiuu"
+      } ],
+      "gender": "male",
+      "birthDate": "1900-01-01",
+      "qualification": [ {
+        "identifier": [ {
+          "use": "official",
+          "assigner": {
+            "display": "9"
+          }
+        } ],
+        "code": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0360/2.7",
+            "code": "AA"
+          } ]
+        },
+        "period": {
+          "start": "1900"
+        }
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  } ]
+}
