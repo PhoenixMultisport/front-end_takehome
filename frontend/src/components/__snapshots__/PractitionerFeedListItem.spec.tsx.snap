@@ -4,25 +4,45 @@ exports[`<PractitionerFeedListItem /> matches snapshot 1`] = `
 <body>
   <div>
     <li
-      class="text-left mb-5 bg-amber-50 text-black p-3 rounded-2xl px-10 drop-shadow-md"
+      class="text-left mb-5 bg-white text-black p-3 rounded-2xl px-10 drop-shadow-md hover:bg-gray-100"
     >
       <h1
         class="text-xl font-bold"
       >
-        resource-type
+        Practitioner
+         #
+        2
       </h1>
-      <a
-        class="hover:text-amber-300 block text-blue-600"
-        href="url"
-      >
-        Website
-      </a>
-      <a
-        class="hover:text-amber-300 block text-blue-600"
-        href="mailto:email"
-      >
-        Email
-      </a>
+      <ul>
+        <li>
+          <p>
+            ID: 
+            6ba911c4-b549-4cd5-9ac4-7172ae5a5d88
+          </p>
+        </li>
+        <li>
+          <p>
+            Last Updated: 
+            2022-06-13
+          </p>
+        </li>
+        <li>
+          <a
+            class="hover:text-amber-300 block text-blue-600"
+            href="mailto:Gabriella58@hotmail.com"
+          >
+            Gabriella58@hotmail.com
+          </a>
+        </li>
+        <li>
+          <a
+            class="hover:text-amber-300 block text-blue-600"
+            href="http://shallow-gastropod.org"
+          >
+            Website
+          </a>
+        </li>
+      </ul>
     </li>
   </div>
 </body>

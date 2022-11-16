@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import axios, { AxiosResponse } from 'axios';
-import PractitionerFeedListItem from './PractitionerFeedListItem';
 import { HapiPractitionerEntryItem, HapiPractitionersResponse } from '../types/Hapi.types';
-import { getPractitionerEmail } from '../utils/helpers';
+import PractitionerFeed from './PractitionerFeed';
 
 function App() {
   const [practitioners, setPractitioners] = useState<HapiPractitionerEntryItem[]>([]);
@@ -16,26 +15,20 @@ function App() {
 
   return (
     <div className="text-center">
-      <header>
+      <header className="min-h-2 p-5 bg-sky-700 text-white font-bold pos drop-shadow-md">
+        <nav>
+          <div className="container flex flex-wrap items-center justify-between mx-auto">
+            <h1>Frontend Assessment</h1>
+          </div>
+        </nav>
       </header>
-      <main className="bg-sky-900 text-white min-h-screen flex flex-col items-center justify-center content-center">
-        <ul>
-          {
-            practitioners.map((p: HapiPractitionerEntryItem, i: number) => {
-              const practitionerEmail: string = getPractitionerEmail(p.resource.telecom);
-
-              return (
-                <PractitionerFeedListItem
-                  key={i}
-                  itemKey={p.resource.id}
-                  resourceType={p.resource.resourceType}
-                  email={practitionerEmail}
-                  url={p.fullUrl}
-                />
-              )
-            })
-          }
-        </ul>
+      <main className="bg-sky-900 text-white min-h-screen flex flex-col items-center justify-center content-center p-5">
+        {
+          practitioners &&
+            <PractitionerFeed
+                practitioners={practitioners}
+            />
+        }
       </main>
     </div>
   );

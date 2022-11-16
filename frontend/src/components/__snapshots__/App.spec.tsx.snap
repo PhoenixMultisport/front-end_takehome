@@ -6,9 +6,21 @@ exports[`<App /> matches snapshot 1`] = `
     <div
       class="text-center"
     >
-      <header />
+      <header
+        class="min-h-2 p-5 bg-sky-700 text-white font-bold pos drop-shadow-md"
+      >
+        <nav>
+          <div
+            class="container flex flex-wrap items-center justify-between mx-auto"
+          >
+            <h1>
+              Frontend Assessment
+            </h1>
+          </div>
+        </nav>
+      </header>
       <main
-        class="bg-sky-900 text-white min-h-screen flex flex-col items-center justify-center content-center"
+        class="bg-sky-900 text-white min-h-screen flex flex-col items-center justify-center content-center p-5"
       >
         <ul />
       </main>
