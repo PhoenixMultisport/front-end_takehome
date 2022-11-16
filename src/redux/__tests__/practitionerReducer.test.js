@@ -7,8 +7,8 @@ const practitioner = {
   firstName: 'Test',
   lastName: 'User',
   address: '4611 Newton Street, Minneapolis, Minnesota, US',
-  phone: '123-456-7890',
-  fax: '555-123-4567',
+  phone: '1234567890',
+  fax: '5551234567',
   email: 'test@user.com'
 };
 
@@ -33,9 +33,9 @@ describe('pactitioner reducers', () => {
 
   it('should updated practitioners list', () => {
     const initialState = {practitioners: [practitioner]};
-    const action = { type: Constants.UPDATE_PRACTITIONER_SUCCESS, payload: {...practitioner, phone: '789-654-01234'}};
+    const action = { type: Constants.UPDATE_PRACTITIONER_SUCCESS, payload: {...practitioner, phone: '78965401234'}};
     const state = practitionerReducer(initialState, action);
 
-    expect(state.practitioners[0].phone).toEqual('789-654-01234');
+    expect(state.practitioners[0].phone).toEqual('78965401234');
   });
 });

@@ -5,7 +5,6 @@ import { store } from '../../redux/store';
 import * as Constants from '../../redux/practitioner/constants';
 import PractitionerEdit from '../PractitionerEdit';
 import { cleanup, render, screen, fireEvent, act, waitFor } from '@testing-library/react';
-import { delay } from '../../../test/config';
 import '@testing-library/jest-dom';
 import axios from 'axios';
 

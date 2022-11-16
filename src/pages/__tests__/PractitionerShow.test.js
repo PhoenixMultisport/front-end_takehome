@@ -13,6 +13,9 @@ const practitioner = {
   id: '123',
   firstName: 'Test',
   lastName: 'User',
+  address: '4611 Newton Street, Minneapolis, Minnesota, US',
+  phone: '123456789',
+  fax: '987654321',
   email: 'test@user.com'
 };
 store.dispatch(
@@ -45,6 +48,13 @@ it('should render practitioner show', async () => {
   expect(screen.getByText(/Phone/i)).toBeInTheDocument();
   expect(screen.getByText(/Fax/i)).toBeInTheDocument();
   expect(screen.getByText(/Email/i)).toBeInTheDocument();
+
+  expect(screen.getByText('Test')).toBeInTheDocument();
+  expect(screen.getByText('User')).toBeInTheDocument();
+  expect(screen.getByText('4611 Newton Street, Minneapolis, Minnesota, US')).toBeInTheDocument();
+  expect(screen.getByText('123456789')).toBeInTheDocument();
+  expect(screen.getByText('987654321')).toBeInTheDocument();
+  expect(screen.getByText('test@user.com')).toBeInTheDocument();
 }, 20000);
 
 it('should render null', async () => {
