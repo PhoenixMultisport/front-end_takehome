@@ -1,8 +1,15 @@
 import React, { createContext, Dispatch, useReducer } from 'react';
-import { NormalizedPractitioner, normalizeFetchedPractitioners, normalizePractitionerResult } from './utils/helpers';
+import {
+  getLinkUrls,
+  NormalizedPractitioner,
+  normalizeFetchedPractitioners,
+  normalizePractitionerResult
+} from './utils/helpers';
 
 export interface IAppContextData {
   practitioners: NormalizedPractitioner[];
+  previousPage: string | null,
+  nextPage: string | null,
   fetched: boolean;
 }
 
@@ -13,6 +20,8 @@ interface IAppContext {
 
 let initialState: IAppContextData = {
   practitioners: [],
+  previousPage: null,
+  nextPage: null,
   fetched: false,
 }
 
@@ -21,8 +30,12 @@ const AppContext = createContext<IAppContext | null>(null);
 let reducer = (state, action) => {
   switch(action.type) {
     case 'set-practitioners':
+      const { previousPage, nextPage } = getLinkUrls(action.payload);
+
       return {
-        practitioners: normalizeFetchedPractitioners(action.payload),
+        practitioners: normalizeFetchedPractitioners(action.payload.entry),
+        previousPage,
+        nextPage,
         fetched: true,
       }
     case 'update-practitioners':

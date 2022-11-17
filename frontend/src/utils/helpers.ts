@@ -1,23 +1,10 @@
 import {
   HapiPractitionerEntryItem,
+  HapiPractitionersResponse,
   HapiTelecomItem,
   HapiTelecomType,
   Resource
 } from '../types/Hapi.types';
-
-export const getPractitionerEmail = (telecomItems: HapiTelecomItem[]) => {
-  let email: string = '';
-
-  if (telecomItems) {
-    const foundEmail: HapiTelecomItem[] = telecomItems.filter((ti) => ti.system === HapiTelecomType.EMAIL);
-
-    if (foundEmail) {
-      email = foundEmail[0].value;
-    }
-  }
-
-  return email
-}
 
 interface getFullNameType { firstName: string, lastName: string }
 
@@ -139,4 +126,21 @@ export const getLabelNameFromPractitionerResult = (key: string) => {
     case 'lastUpdated':
       return 'Last Updated';
   }
+}
+
+interface IGetLinkUrls {
+  previousPage: string | null;
+  nextPage: string | null;
+}
+
+export const getLinkUrls = (data: HapiPractitionersResponse): IGetLinkUrls => {
+  let previousPage: string | null = null;
+  let nextPage: string | null = null;
+
+  if (data.link) {
+    previousPage = data.link.find((link) => link.relation === 'previous')?.url || null;
+    nextPage = data.link.find((link) => link.relation === 'next')?.url || null;
+  }
+
+    return { previousPage, nextPage }
 }

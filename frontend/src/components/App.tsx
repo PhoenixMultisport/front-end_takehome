@@ -6,20 +6,20 @@ import PractitionerFeed from './PractitionerFeed';
 import { HapiPractitionersFetchRequestUrl } from '../constants';
 import { AppContext } from '../AppContext';
 import { NormalizedPractitioner } from '../utils/helpers';
-import { CircularProgress } from '@mui/material';
+import { Button, CircularProgress } from '@mui/material';
 
 function App() {
   const appContext = useContext(AppContext);
   const [practitioners, setPractitioners] = useState<NormalizedPractitioner[]>([]);
 
-  useEffect(() => {
+  useEffect( () => {
     if (!appContext?.state.fetched) {
       axios.get<HapiPractitionersResponse>(HapiPractitionersFetchRequestUrl)
         .then((res: AxiosResponse<HapiPractitionersResponse>) => {
           if (res.data.entry) {
             appContext?.dispatch({
               type: 'set-practitioners',
-              payload: res.data.entry
+              payload: res.data
             });
           }
         })
@@ -27,7 +27,33 @@ function App() {
     } else {
       setPractitioners(appContext.state.practitioners);
     }
-  }, [appContext?.state.fetched])
+  }, [appContext?.state.fetched]);
+
+  const getPreviousPage = () => {
+    axios.get<HapiPractitionersResponse>(appContext?.state.previousPage as string)
+      .then((res: AxiosResponse<HapiPractitionersResponse>) => {
+        if (res.data.entry) {
+          appContext?.dispatch({
+            type: 'set-practitioners',
+            payload: res.data
+          });
+        }
+      })
+      .catch((err) => console.error(err));
+  }
+
+  const getNextPage = () => {
+    axios.get<HapiPractitionersResponse>(appContext?.state.nextPage as string)
+      .then((res: AxiosResponse<HapiPractitionersResponse>) => {
+        if (res.data.entry) {
+          appContext?.dispatch({
+            type: 'set-practitioners',
+            payload: res.data
+          });
+        }
+      })
+      .catch((err) => console.error(err));
+  }
 
   return (
     <div className="text-center">
@@ -46,6 +72,20 @@ function App() {
             />
           : <CircularProgress />
         }
+        <div className="flex">
+        <Button
+          disabled={!appContext?.state.previousPage}
+          onClick={() => getPreviousPage()}
+        >
+          Previous Page
+        </Button>
+        <Button
+          disabled={!appContext?.state.nextPage}
+          onClick={() => getNextPage()}
+        >
+          Next Page
+        </Button>
+        </div>
       </main>
     </div>
   );
