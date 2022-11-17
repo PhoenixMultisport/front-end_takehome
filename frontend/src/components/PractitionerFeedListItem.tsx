@@ -1,41 +1,45 @@
-import React from 'react';
-import { getPractitionerEmail } from '../utils/helpers';
-import { HapiPractitionerEntryItem } from '../types/Hapi.types';
-import moment from 'moment';
+import React, { useState } from 'react';
+import {
+  getLabelNameFromPractitionerResult,
+  NormalizedPractitioner
+} from '../utils/helpers';
+import PractitionerFeedListItemEdit from './PractitionerFeedListItemEdit';
+import { Button, Card, ListItemText } from '@mui/material';
+import { faker } from '@faker-js/faker';
 
-interface HapiPractitionerEntryItemParams {
-  practitioner: HapiPractitionerEntryItem,
-  id: number,
+export interface HapiPractitionerEntryItemParams {
+  practitioner: NormalizedPractitioner,
 }
 
-const PractitionerFeedListItem: React.FC<HapiPractitionerEntryItemParams> = ({ practitioner, id }: HapiPractitionerEntryItemParams): JSX.Element => {
-  const practitionerEmail: string = getPractitionerEmail(practitioner.resource.telecom);
+const PractitionerFeedListItem: React.FC<HapiPractitionerEntryItemParams> = ({ practitioner }: HapiPractitionerEntryItemParams): JSX.Element => {
+  const [showEdit, setShowEdit] = useState(false);
 
   return (
-    <li key={practitioner.resource.id} className="text-left mb-5 bg-white text-black p-3 rounded-2xl px-10 drop-shadow-md hover:bg-gray-100">
-      <h1 className="text-xl font-bold">{practitioner.resource.resourceType} #{id + 1}</h1>
-      <ul>
-        <li>
-          <p>
-            ID: { practitioner.resource.id }
-          </p>
-        </li>
-        <li>
-          <p>
-            Last Updated: { moment(practitioner.resource.meta.lastUpdated).format('YYYY-MM-DD') }
-          </p>
-        </li>
-        <li>
-          <a className="hover:text-amber-300 block text-blue-600" href={`mailto:${practitionerEmail}`}>
-            { practitionerEmail || ''}
-          </a>
-        </li>
-        <li>
-          <a className="hover:text-amber-300 block text-blue-600" href={practitioner.fullUrl}>
-            Website
-          </a>
-        </li>
-      </ul>
+    <li key={faker.datatype.uuid()}>
+    <Card className="text-left mb-5 bg-white text-black p-3 rounded-2xl px-10 drop-shadow-md" key={faker.datatype.uuid()}>
+      { !showEdit ?
+        <>
+          {Object.keys(practitioner).map((pi) => {
+            return (
+              <div className="flex justify-between mb-2" key={faker.datatype.uuid()}>
+                <ListItemText>
+                  {getLabelNameFromPractitionerResult(pi)}:
+                </ListItemText>
+                <p>
+                  {practitioner[pi]}
+                </p>
+              </div>
+            )
+          })}
+          <Button
+            onClick={() => setShowEdit(true)}
+          >
+            Edit
+          </Button>
+        </> :
+        <PractitionerFeedListItemEdit practitioner={practitioner} setShowEdit={() => setShowEdit(false)} />
+      }
+    </Card>
     </li>
   )
 };

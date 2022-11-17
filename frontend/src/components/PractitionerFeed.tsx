@@ -1,20 +1,19 @@
-import { HapiPractitionerEntryItem } from '../types/Hapi.types';
 import PractitionerFeedListItem from './PractitionerFeedListItem';
 import * as React from 'react';
+import { NormalizedPractitioner } from '../utils/helpers';
 
-interface PractitionerFeedParams { practitioners: HapiPractitionerEntryItem[] }
+interface PractitionerFeedParams { practitioners: NormalizedPractitioner[] }
 
 const PractitionerFeed: React.FC<PractitionerFeedParams> = (props: PractitionerFeedParams): JSX.Element => {
   return (
     <ul>
       {
-        props.practitioners?.map((p: HapiPractitionerEntryItem, i: number) => {
+        props.practitioners?.map((p: NormalizedPractitioner) => {
           return (
-            <PractitionerFeedListItem
-              key={i}
-              id={i}
-              practitioner={p}
-            />
+          <PractitionerFeedListItem
+            key={p.id}
+            practitioner={p}
+          />
           )
         })
       }

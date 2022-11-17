@@ -3,46 +3,140 @@
 exports[`<PractitionerFeedListItem /> matches snapshot 1`] = `
 <body>
   <div>
-    <li
-      class="text-left mb-5 bg-white text-black p-3 rounded-2xl px-10 drop-shadow-md hover:bg-gray-100"
-    >
-      <h1
-        class="text-xl font-bold"
+    <li>
+      <div
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root text-left mb-5 bg-white text-black p-3 rounded-2xl px-10 drop-shadow-md css-bhp9pd-MuiPaper-root-MuiCard-root"
       >
-        Practitioner
-         #
-        2
-      </h1>
-      <ul>
-        <li>
-          <p>
-            ID: 
-            6ba911c4-b549-4cd5-9ac4-7172ae5a5d88
-          </p>
-        </li>
-        <li>
-          <p>
-            Last Updated: 
-            2022-06-13
-          </p>
-        </li>
-        <li>
-          <a
-            class="hover:text-amber-300 block text-blue-600"
-            href="mailto:Gabriella58@hotmail.com"
+        <div
+          class="flex justify-between mb-2"
+        >
+          <div
+            class="MuiListItemText-root css-tlelie-MuiListItemText-root"
           >
-            Gabriella58@hotmail.com
-          </a>
-        </li>
-        <li>
-          <a
-            class="hover:text-amber-300 block text-blue-600"
-            href="http://shallow-gastropod.org"
+            <span
+              class="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-10hburv-MuiTypography-root"
+            >
+              Address
+              :
+            </span>
+          </div>
+          <p>
+            address
+          </p>
+        </div>
+        <div
+          class="flex justify-between mb-2"
+        >
+          <div
+            class="MuiListItemText-root css-tlelie-MuiListItemText-root"
           >
-            Website
-          </a>
-        </li>
-      </ul>
+            <span
+              class="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-10hburv-MuiTypography-root"
+            >
+              Email
+              :
+            </span>
+          </div>
+          <p>
+            email
+          </p>
+        </div>
+        <div
+          class="flex justify-between mb-2"
+        >
+          <div
+            class="MuiListItemText-root css-tlelie-MuiListItemText-root"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-10hburv-MuiTypography-root"
+            >
+              Fax
+              :
+            </span>
+          </div>
+          <p>
+            fax
+          </p>
+        </div>
+        <div
+          class="flex justify-between mb-2"
+        >
+          <div
+            class="MuiListItemText-root css-tlelie-MuiListItemText-root"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-10hburv-MuiTypography-root"
+            >
+              First name
+              :
+            </span>
+          </div>
+          <p>
+            first-name
+          </p>
+        </div>
+        <div
+          class="flex justify-between mb-2"
+        >
+          <div
+            class="MuiListItemText-root css-tlelie-MuiListItemText-root"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-10hburv-MuiTypography-root"
+            >
+              Id
+              :
+            </span>
+          </div>
+          <p>
+            unique-id
+          </p>
+        </div>
+        <div
+          class="flex justify-between mb-2"
+        >
+          <div
+            class="MuiListItemText-root css-tlelie-MuiListItemText-root"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-10hburv-MuiTypography-root"
+            >
+              Last name
+              :
+            </span>
+          </div>
+          <p>
+            last-name
+          </p>
+        </div>
+        <div
+          class="flex justify-between mb-2"
+        >
+          <div
+            class="MuiListItemText-root css-tlelie-MuiListItemText-root"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-10hburv-MuiTypography-root"
+            >
+              Phone
+              :
+            </span>
+          </div>
+          <p>
+            phone
+          </p>
+        </div>
+        <button
+          class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+          tabindex="0"
+          type="button"
+        >
+          Edit
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
     </li>
   </div>
 </body>
