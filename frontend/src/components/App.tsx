@@ -6,15 +6,18 @@ import PractitionerFeed from './PractitionerFeed';
 import { HapiPractitionersFetchRequestUrl } from '../constants';
 import { AppContext } from '../AppContext';
 import { NormalizedPractitioner } from '../utils/helpers';
-import { Button, CircularProgress } from '@mui/material';
+import { Input, Button, CircularProgress } from '@mui/material';
 
 function App() {
   const appContext = useContext(AppContext);
   const [practitioners, setPractitioners] = useState<NormalizedPractitioner[]>([]);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect( () => {
-    if (!appContext?.state.fetched) {
-      axios.get<HapiPractitionersResponse>(HapiPractitionersFetchRequestUrl)
+    let searchUrl = HapiPractitionersFetchRequestUrl;
+
+    if (!appContext?.state.fetched || searchTerm.length === 0) {
+      axios.get<HapiPractitionersResponse>(searchUrl)
         .then((res: AxiosResponse<HapiPractitionersResponse>) => {
           if (res.data.entry) {
             appContext?.dispatch({
@@ -27,7 +30,22 @@ function App() {
     } else {
       setPractitioners(appContext.state.practitioners);
     }
-  }, [appContext?.state.fetched]);
+
+    if (searchTerm.length > 0) {
+      searchUrl = `${HapiPractitionersFetchRequestUrl}/?given=${searchTerm}&_format=json&_pretty=true`;
+
+      axios.get<HapiPractitionersResponse>(searchUrl)
+        .then((res: AxiosResponse<HapiPractitionersResponse>) => {
+          if (res.data.entry) {
+            appContext?.dispatch({
+              type: 'set-practitioners',
+              payload: res.data
+            });
+          }
+        })
+        .catch((err) => console.error(err));
+    }
+  }, [appContext?.state.fetched, searchTerm]);
 
   const getPreviousPage = () => {
     axios.get<HapiPractitionersResponse>(appContext?.state.previousPage as string)
@@ -61,6 +79,10 @@ function App() {
         <nav>
           <div className="container flex flex-wrap items-center justify-between mx-auto">
             <h1>Frontend Assessment</h1>
+            <Input
+              classes={{ inputTypeSearch: 'search'}}
+              onChange={(ev) => setSearchTerm(ev.target.value)}
+            />
           </div>
         </nav>
       </header>
