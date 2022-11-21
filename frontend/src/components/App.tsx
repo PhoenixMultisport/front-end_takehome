@@ -3,10 +3,10 @@ import { useContext, useEffect, useState } from 'react';
 import axios, { AxiosResponse } from 'axios';
 import { HapiPractitionersResponse } from '../types/Hapi.types';
 import PractitionerFeed from './PractitionerFeed';
-import { HapiPractitionersFetchRequestUrl } from '../constants';
 import { AppContext } from '../AppContext';
 import { NormalizedPractitioner } from '../utils/helpers';
 import { Input, Button, CircularProgress } from '@mui/material';
+import { HapiService } from '../services/hapi-service';
 
 function App() {
   const appContext = useContext(AppContext);
@@ -14,36 +14,51 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect( () => {
-    let searchUrl = HapiPractitionersFetchRequestUrl;
-
     if (!appContext?.state.fetched || searchTerm.length === 0) {
-      axios.get<HapiPractitionersResponse>(searchUrl)
-        .then((res: AxiosResponse<HapiPractitionersResponse>) => {
-          if (res.data.entry) {
-            appContext?.dispatch({
-              type: 'set-practitioners',
-              payload: res.data
-            });
+      Promise.all([HapiService.fetchPractitioners()])
+        .then((data) => {
+          appContext?.dispatch({
+            type: 'set-practitioners',
+            payload: data[0]
+          });
+
+          if (appContext) {
+            setPractitioners(appContext.state.practitioners);
           }
         })
-        .catch((err) => console.error(err));
+        .catch((err) => {
+          console.error(err);
+        });
     } else {
       setPractitioners(appContext.state.practitioners);
     }
 
     if (searchTerm.length > 0) {
-      searchUrl = `${HapiPractitionersFetchRequestUrl}/?given=${searchTerm}&_format=json&_pretty=true`;
+      Promise.all([HapiService.fetchPractitioners(searchTerm)])
+        .then((data) => {
+          appContext?.dispatch({
+            type: 'set-practitioners',
+            payload: data[0]
+          });
 
-      axios.get<HapiPractitionersResponse>(searchUrl)
-        .then((res: AxiosResponse<HapiPractitionersResponse>) => {
-          if (res.data.entry) {
-            appContext?.dispatch({
-              type: 'set-practitioners',
-              payload: res.data
-            });
+          if (appContext) {
+            setPractitioners(appContext.state.practitioners);
           }
         })
-        .catch((err) => console.error(err));
+        .catch((err) => {
+          console.error(err);
+        });
+
+      // axios.get<HapiPractitionersResponse>(searchUrl)
+      //   .then((res: AxiosResponse<HapiPractitionersResponse>) => {
+      //     if (res.data.entry) {
+      //       appContext?.dispatch({
+      //         type: 'set-practitioners',
+      //         payload: res.data
+      //       });
+      //     }
+      //   })
+      //   .catch((err) => console.error(err));
     }
   }, [appContext?.state.fetched, searchTerm]);
 
@@ -91,8 +106,7 @@ function App() {
           practitioners.length ?
             <PractitionerFeed
                 practitioners={practitioners}
-            />
-          : <CircularProgress />
+            /> : <CircularProgress />
         }
         <div className="flex">
         <Button

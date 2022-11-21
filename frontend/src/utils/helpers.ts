@@ -34,7 +34,16 @@ export const getAddress = (resource: Resource): { address: string } => {
   let address: string = '';
 
   if (resource.address) {
-    address = resource.address.map((a) => a).join(' ');
+    const addressObj = resource.address
+
+    if (addressObj[0]) {
+      let streetAdd: string = '';
+
+      if (addressObj[0]?.line?.length) {
+        streetAdd = addressObj[0].line[0];
+      }
+      address = `${streetAdd} ${addressObj[0].city} ${addressObj[0].country} ${addressObj[0].postalCode}`
+    }
   }
   return { address };
 }
@@ -130,17 +139,20 @@ export const getLabelNameFromPractitionerResult = (key: string) => {
 
 interface IGetLinkUrls {
   previousPage: string | null;
+  currentPage: string | null;
   nextPage: string | null;
 }
 
 export const getLinkUrls = (data: HapiPractitionersResponse): IGetLinkUrls => {
   let previousPage: string | null = null;
+  let currentPage: string | null = null;
   let nextPage: string | null = null;
 
   if (data.link) {
     previousPage = data.link.find((link) => link.relation === 'previous')?.url || null;
+    currentPage = data.link.find((link) => link.relation === 'self')?.url || null;
     nextPage = data.link.find((link) => link.relation === 'next')?.url || null;
   }
 
-    return { previousPage, nextPage }
+    return { previousPage, currentPage, nextPage }
 }

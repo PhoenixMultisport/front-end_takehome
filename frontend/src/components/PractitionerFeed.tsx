@@ -1,5 +1,5 @@
-import PractitionerFeedListItem from './PractitionerFeedListItem';
 import * as React from 'react';
+import PractitionerFeedListItem from './PractitionerFeedListItem';
 import { NormalizedPractitioner } from '../utils/helpers';
 
 interface PractitionerFeedParams { practitioners: NormalizedPractitioner[] }

@@ -9,6 +9,7 @@ import {
 export interface IAppContextData {
   practitioners: NormalizedPractitioner[];
   previousPage: string | null,
+  currentPage: string | null,
   nextPage: string | null,
   fetched: boolean;
 }
@@ -21,6 +22,7 @@ interface IAppContext {
 let initialState: IAppContextData = {
   practitioners: [],
   previousPage: null,
+  currentPage: null,
   nextPage: null,
   fetched: false,
 }
@@ -30,11 +32,12 @@ const AppContext = createContext<IAppContext | null>(null);
 let reducer = (state, action) => {
   switch(action.type) {
     case 'set-practitioners':
-      const { previousPage, nextPage } = getLinkUrls(action.payload);
+      const { previousPage, currentPage, nextPage } = getLinkUrls(action.payload);
 
       return {
         practitioners: normalizeFetchedPractitioners(action.payload.entry),
         previousPage,
+        currentPage,
         nextPage,
         fetched: true,
       }
@@ -46,7 +49,8 @@ let reducer = (state, action) => {
 
       return {
         ...state,
-        statePractitioners,
+        practitioners: statePractitioners,
+        fetched: false,
       }
   }
 }
